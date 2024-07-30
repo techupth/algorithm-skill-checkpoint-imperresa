@@ -1,5 +1,25 @@
 function findStudentById(students, id) {
   // Your code here
+   // for (let i of students){
+  //   if(i.id === id){
+  //     return i
+  //   }
+  // }
+  // return null
+  let left = 0
+  let right = students.length - 1
+  let index = null
+  while(left<=right){
+    let mid = Math.floor(left+right)/2
+    if(students[mid].id === id){
+      return students[mid]
+    }else if (students[mid].id < id){
+      left = mid +1
+    }else{
+      right = mid - 1
+    }
+  }
+  return index
 }
 
 // Test case
